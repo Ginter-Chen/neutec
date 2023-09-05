@@ -1,0 +1,13 @@
+
+<section class="menuItem">
+  <li v-for="item in props.menuData" :key="item.key" :style="{'background-color':chanbeBackground(item)?'gray':''}">
+    <span @click="toggleItem(item)" 
+      :style="{ 'padding-left': `${props.level * 20}px`,
+       'color': isSelected(item) ? 'yellow' : 'white'}"
+      >{{ item.text }}</span>
+    <ul v-if="isOpen(item)">
+      <menuItem :menuData="item.children" :level="props.level + 1"></menuItem>
+    </ul>
+  </li>
+</section>
+

@@ -1,5 +1,16 @@
-
 <section class="main">
-  <div class="text-white">test</div>
+  <div class="h-[100vh] w-[100vw] bg-gray-400">
+    <div class="bg-white h-[30px] relative flex justify-end">
+      <button class="w-30px h-20px m-5px border border-solid border-black text-xs" @click="clickMenu(true)">三</button>
+    </div>
+    <div v-if="showPopup" class="h-full w-full absolute flex justify-end top-0 left-0">
+      <div class="h-full w-1/2" @click="clickMenu(false)"></div>
+      <div class="h-full w-1/2 bg-black text-white ">
+        <ul>
+          <menuItem :menuData="datas"></menuItem>
+        </ul>
+      </div>
+    </div>
+  </div>
 </section>
 
