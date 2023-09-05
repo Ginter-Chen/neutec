@@ -4,10 +4,9 @@
       <button class="w-30px h-20px m-5px border border-solid border-black text-xs" @click="clickMenu(true)">三</button>
     </div>
     <transition name="slide">
-      <!-- <div v-if="showPopup" class="h-full w-full absolute flex justify-end top-0 left-0 z-30 sliding-div"> -->
       <div v-if="start" class="h-full w-full absolute flex justify-end top-0 z-30 sliding-div" :class="showPopup?'slide-in left-0':'slide-out left-[390px]'">
         <div class="h-full w-1/2" @click="clickMenu(false)"></div>
-        <div class="h-full w-1/2 bg-black text-white ">
+        <div class="h-full w-1/2 bg-[#000000DD] text-white ">
           <ul>
             <menuItem :menuData="datas"></menuItem>
           </ul>

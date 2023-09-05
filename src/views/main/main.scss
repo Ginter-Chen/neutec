@@ -28,22 +28,18 @@
 }
 @keyframes slideIn {
     from {
-    //   transform: translateX(100%);
         left: 390px;
     }
     to {
-    //   transform: translateX(0);
         left: 0px;
     }
 }
 
 @keyframes slideOut {
     from {
-    //   transform: translateX(0);
         left: 0px;
     }
     to {
-    //   transform: translateX(100%);
         left: 390px;
     }
 }
