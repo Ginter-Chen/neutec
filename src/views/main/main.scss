@@ -1,14 +1,57 @@
-.bg-gradient-radial {
+.bgGradient {
     background: radial-gradient(circle, rgba(113, 81, 95, 1) 81%, rgba(0, 0, 0, 1) 100%);
 }
-.blink-bg-gradient {
-    animation: blink 2s infinite; /* 设置动画名称、持续时间和重复次数 */
+.blinkAnimation {
+    animation: blinkAnimation 2s infinite;
 }
-@keyframes blink {
+.moveRightAnimation{
+    animation: moveRight 2s linear infinite;
+}
+@keyframes blinkAnimation {
     0%, 100% {
-      opacity: 1; /* 透明度 100% */
+        opacity: 1;
     }
     50% {
-      opacity: 0.6; /* 透明度 60% */
+        opacity: 0.6;
     }
+}
+@keyframes moveRight {
+    0%{
+        transform: translateX(0);
+    }
+    70%{
+        transform: translateX(250px);
+    }
+    100%{
+        transform: translateX(250px);
+    }
+}
+@keyframes slideIn {
+    from {
+    //   transform: translateX(100%);
+        left: 390px;
+    }
+    to {
+    //   transform: translateX(0);
+        left: 0px;
+    }
+}
+
+@keyframes slideOut {
+    from {
+    //   transform: translateX(0);
+        left: 0px;
+    }
+    to {
+    //   transform: translateX(100%);
+        left: 390px;
+    }
+}
+
+.slide-in {
+    animation: slideIn 0.5s;
+}
+
+.slide-out {
+    animation: slideOut 0.5s;
 }

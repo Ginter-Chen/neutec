@@ -12,16 +12,19 @@ export default {
 
   },
   setup() {
+    let start = ref(false);
     let showPopup = ref(false);
     onMounted(async () => {
     });
     function clickMenu(e){
+      start.value = true;
       showPopup.value = e;
     }
     return {
       showPopup,
       clickMenu,
       datas,
+      start,
     }
   }
 }
