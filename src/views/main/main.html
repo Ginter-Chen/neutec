@@ -1,23 +1,22 @@
 <section class="main">
-  <div class="h-[100vh] w-[100vw] bg-gray-400 ">
-    <div class="bg-white h-[30px] relative flex justify-end">
+  <div class="h-[100vh] w-[100vw] bg-gray-400 relative">
+    <div class="bg-white h-[30px] flex justify-end">
       <button class="w-30px h-20px m-5px border border-solid border-black text-xs" @click="clickMenu(true)">三</button>
-    </div>
-    <transition name="slide">
-      <div v-if="start" class="h-full w-full absolute flex justify-end top-0 z-30 sliding-div" :class="showPopup?'slide-in left-0':'slide-out left-[390px]'">
-        <div class="h-full w-1/2" @click="clickMenu(false)"></div>
-        <div class="h-full w-1/2 bg-[#000000DD] text-white ">
-          <ul>
-            <menuItem :menuData="datas"></menuItem>
-          </ul>
+      <transition name="slide">
+        <div v-if="start" class="h-full w-1/2 absolute flex justify-end top-0 z-30 sliding-div" :class="showPopup?'slide-in left-[195px]':'slide-out left-[390px]'" v-click-outside="clickMenu">
+          <div class="h-full w-full bg-[#000000DD] text-white ">
+            <ul>
+              <menuItem :menuData="datas"></menuItem>
+            </ul>
+          </div>
         </div>
-      </div>
-    </transition>
-    <div class="w-full h-[814px] flex flex-col justify-center">
+      </transition>
+    </div>
+    <div class="w-full h-[814px] flex flex-col justify-center relative">
       <div class="grid grid-cols-3 gap-2 p-2">
         <div v-for="n in 9" class="w-full h-100px border-2px border-solid border-black bgGradient" :class="(n==3||n==5||n==9)?'blinkAnimation':''">
           <div v-if="n==1||n==3||n==7||n==9" class="w-full h-full flex justify-center flex-col">
-            <div class="w-full flex justify-center">
+            <div class="w-full flex justify-center relative">
               <div class="w-30px h-30px bg-[#A5F12BFF] rounded-8 flex flex-col justify-center moveRightAnimation z-10">
                 <div class="w-full text-center">0</div>
               </div>
@@ -25,6 +24,9 @@
           </div>
         </div>
       </div>
+      <!-- <div v-for="(item,index) in balls" class="w-30px h-30px bg-[#A5F12BFF] rounded-8 flex flex-col justify-center z-10 absolute movePisition" :style="`left:${item.left}px;top:${item.top}px`">
+        <div class="w-full text-center">0</div>
+      </div> -->
     </div>
   </div>
 </section>
