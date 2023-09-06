@@ -51,7 +51,7 @@
 .slide-out {
     animation: slideOut 0.5s;
 }
-.movePisition{
+.movePosition{
     animation-fill-mode: forwards; /* 保持动画结束时的状态 */
     animation: movePositionAnimation 1s linear infinite;
 }

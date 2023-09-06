@@ -15,17 +15,24 @@ export default {
     let start = ref(false);
     let showPopup = ref(false);
     let balls = reactive([
-      {left:50,top:50},
-      {left:310,top:50},
-      {left:50,top:600},
-      {left:310,top:600},
+      // {left:50,top:50},
+      // {left:310,top:50},
+      // {left:50,top:600},
+      // {left:310,top:600},
     ])
     onMounted(async () => {
+      for(var a = 0;a<=99;a++){
+        balls.push({left:getRandomInt(window.innerWidth),top:getRandomInt(window.innerHeight)});
+      }
     });
     function clickMenu(e){
       start.value = true;
       showPopup.value = e;
     }
+    function getRandomInt(max) {
+      return Math.floor(Math.random() * max);
+    }
+    
     return {
       showPopup,
       clickMenu,
