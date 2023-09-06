@@ -31,13 +31,13 @@
         left: 390px;
     }
     to {
-        left: 0px;
+        left: 195px;
     }
 }
 
 @keyframes slideOut {
     from {
-        left: 0px;
+        left: 195px;
     }
     to {
         left: 390px;
@@ -50,4 +50,14 @@
 
 .slide-out {
     animation: slideOut 0.5s;
+}
+.movePisition{
+    animation-fill-mode: forwards; /* 保持动画结束时的状态 */
+    animation: movePositionAnimation 1s linear infinite;
+}
+@keyframes movePositionAnimation {
+    100% {
+      left:100px;
+      top:100px;
+    }
 }

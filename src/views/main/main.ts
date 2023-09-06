@@ -14,6 +14,12 @@ export default {
   setup() {
     let start = ref(false);
     let showPopup = ref(false);
+    let balls = reactive([
+      {left:50,top:50},
+      {left:310,top:50},
+      {left:50,top:600},
+      {left:310,top:600},
+    ])
     onMounted(async () => {
     });
     function clickMenu(e){
@@ -25,6 +31,7 @@ export default {
       clickMenu,
       datas,
       start,
+      balls,
     }
   }
 }
