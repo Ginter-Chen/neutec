@@ -1,12 +1,17 @@
 <section class="main">
-  <div class="h-[100vh] w-[100vw] bg-gray-400 relative">
+  <div class="h-[100vh] w-[100vw] bg-gray-400 relative overflow-hidden">
     <div class="bg-white h-[30px] flex justify-end">
       <button class="w-30px h-20px m-5px border border-solid border-black text-xs" @click="clickMenu(true)">三</button>
       <transition name="slide">
         <div v-if="start" class="h-full w-1/2 absolute flex justify-end top-0 z-30 sliding-div" :class="showPopup?'slide-in left-[195px]':'slide-out left-[390px]'" v-click-outside="clickMenu">
           <div class="h-full w-full bg-[#000000DD] text-white ">
+            <div class="w-full flex justify-center py-5px">
+              <select v-model="selectData" class="w-1/2 text-black">
+                <option v-for="(item,index) in flattenedData" :value="item.key">{{item.text}}</option>
+              </select>
+            </div>
             <ul>
-              <menuItem :menuData="datas"></menuItem>
+              <menuItem :menuData="datas" :selectData="selectData"></menuItem>
             </ul>
           </div>
         </div>
@@ -30,4 +35,3 @@
     </div>
   </div>
 </section>
-
